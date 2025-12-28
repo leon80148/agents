@@ -1,5 +1,6 @@
-# Claude Code settings and local files
-.claude/
+# Claude Code settings and local files (but keep skills)
+.claude/*
+!.claude/skills/
 .DS_Store
 settings.local.json
 

@@ -1,48 +1,71 @@
-# Contains Studio AI Agents
+# Claude Code 專業代理與技能集合
 
-A comprehensive collection of specialized AI agents designed to accelerate and enhance every aspect of rapid development. Each agent is an expert in their domain, ready to be invoked when their expertise is needed.
+> 🙏 **致謝**：本專案改編自 [Contains Studio](https://github.com/contains-studio/agents) 的原始代理集合。感謝他們提供優秀的基礎架構。
 
-## 📥 Installation
+這是一個專為 Claude Code 設計的專業 AI 代理與技能集合，針對快速的 6 天衝刺開發週期進行優化。專案採用混合架構，結合執行型代理與知識型技能，以最大化開發效率。
 
-1. **Download this repository:**
+## 📥 安裝
+
+1. **下載此程式庫：**
    ```bash
-   git clone https://github.com/contains-studio/agents.git
+   git clone https://github.com/[your-username]/agents.git
    ```
 
-2. **Copy to your Claude Code agents directory:**
+2. **複製代理到 Claude Code 目錄：**
    ```bash
-   cp -r agents/* ~/.claude/agents/
+   # 複製代理
+   cp -r agents/engineering ~/.claude/agents/
+   cp -r agents/design ~/.claude/agents/
+   cp -r agents/marketing ~/.claude/agents/
+   cp -r agents/project-management ~/.claude/agents/
+   cp -r agents/studio-operations ~/.claude/agents/
+   cp -r agents/testing ~/.claude/agents/
+   cp -r agents/bonus ~/.claude/agents/
+
+   # 複製技能
+   cp -r agents/.claude/skills ~/.claude/
    ```
-   
-   Or manually copy all the agent files to your `~/.claude/agents/` directory.
 
-3. **Restart Claude Code** to load the new agents.
+3. **重新啟動 Claude Code** 以載入新的代理和技能。
 
-## 🚀 Quick Start
+## 🏗️ 架構說明
 
-Agents are automatically available in Claude Code. Simply describe your task and the appropriate agent will be triggered. You can also explicitly request an agent by mentioning their name.
+本專案採用混合架構：
 
-📚 **Learn more:** [Claude Code Sub-Agents Documentation](https://docs.anthropic.com/en/docs/claude-code/sub-agents)
+### 代理 (Agents) - 執行型
+獨立的子代理，可使用工具執行任務：
+- 程式碼實作與修改
+- 測試執行與修復
+- 部署與 DevOps 操作
+- UI/UX 實作
 
-### Example Usage
-- "Create a new app for tracking meditation habits" → `rapid-prototyper`
-- "What's trending on TikTok that we could build?" → `trend-researcher`
-- "Our app reviews are dropping, what's wrong?" → `feedback-synthesizer`
-- "Make this loading screen more fun" → `whimsy-injector`
+### 技能 (Skills) - 知識型
+提供專業知識和最佳實踐供 Claude 參考：
+- 品牌設計指南
+- UX 研究方法
+- 成長駭客策略
+- 法律合規檢查
 
-## 📁 Directory Structure
-
-Agents are organized by department for easy discovery:
+## 📁 目錄結構
 
 ```
-contains-studio-agents/
-├── design/
-│   ├── brand-guardian.md
-│   ├── ui-designer.md
-│   ├── ux-researcher.md
-│   ├── visual-storyteller.md
-│   └── whimsy-injector.md
-├── engineering/
+agents/
+├── .claude/
+│   └── skills/                    # 知識型技能
+│       ├── brand-guidelines/      # 品牌設計指南
+│       ├── ux-research/           # UX 研究方法
+│       ├── visual-storytelling/   # 視覺敘事
+│       ├── trend-research/        # 趨勢研究
+│       ├── feedback-analysis/     # 回饋分析
+│       ├── sprint-prioritization/ # 衝刺優先順序
+│       ├── aso-optimization/      # 應用商店優化
+│       ├── content-creation/      # 內容創作
+│       ├── growth-hacking/        # 成長駭客
+│       ├── analytics-insights/    # 分析洞察
+│       ├── legal-compliance/      # 法律合規
+│       ├── tool-evaluation/       # 工具評估
+│       └── workflow-optimization/ # 工作流程優化
+├── engineering/                   # 工程代理
 │   ├── ai-engineer.md
 │   ├── backend-architect.md
 │   ├── devops-automator.md
@@ -50,249 +73,135 @@ contains-studio-agents/
 │   ├── mobile-app-builder.md
 │   ├── rapid-prototyper.md
 │   └── test-writer-fixer.md
-├── marketing/
-│   ├── app-store-optimizer.md
-│   ├── content-creator.md
-│   ├── growth-hacker.md
+├── design/                        # 設計代理
+│   ├── ui-designer.md
+│   └── whimsy-injector.md
+├── marketing/                     # 行銷代理
 │   ├── instagram-curator.md
 │   ├── reddit-community-builder.md
 │   ├── tiktok-strategist.md
 │   └── twitter-engager.md
-├── product/
-│   ├── feedback-synthesizer.md
-│   ├── sprint-prioritizer.md
-│   └── trend-researcher.md
-├── project-management/
+├── project-management/            # 專案管理代理
 │   ├── experiment-tracker.md
 │   ├── project-shipper.md
 │   └── studio-producer.md
-├── studio-operations/
-│   ├── analytics-reporter.md
+├── studio-operations/             # 工作室營運代理
 │   ├── finance-tracker.md
 │   ├── infrastructure-maintainer.md
-│   ├── legal-compliance-checker.md
 │   └── support-responder.md
-├── testing/
+├── testing/                       # 測試代理
 │   ├── api-tester.md
 │   ├── performance-benchmarker.md
-│   ├── test-results-analyzer.md
-│   ├── tool-evaluator.md
-│   └── workflow-optimizer.md
-└── bonus/
-    ├── joker.md
-    └── studio-coach.md
+│   └── test-results-analyzer.md
+└── bonus/                         # 特殊代理
+    ├── studio-coach.md
+    └── joker.md
 ```
 
-## 📋 Complete Agent List
+## 📋 代理清單
 
-### Engineering Department (`engineering/`)
-- **ai-engineer** - Integrate AI/ML features that actually ship
-- **backend-architect** - Design scalable APIs and server systems
-- **devops-automator** - Deploy continuously without breaking things
-- **frontend-developer** - Build blazing-fast user interfaces
-- **mobile-app-builder** - Create native iOS/Android experiences
-- **rapid-prototyper** - Build MVPs in days, not weeks
-- **test-writer-fixer** - Write tests that catch real bugs
+### 工程部門 (`engineering/`)
+| 代理 | 說明 |
+|------|------|
+| ai-engineer | 整合實際可發布的 AI/ML 功能 |
+| backend-architect | 設計可擴展的 API 和伺服器系統 |
+| devops-automator | 持續部署而不破壞系統 |
+| frontend-developer | 建構極速的使用者介面 |
+| mobile-app-builder | 建立原生 iOS/Android 體驗 |
+| rapid-prototyper | 在數天內建構 MVP |
+| test-writer-fixer | 撰寫能捕捉真實錯誤的測試 |
 
-### Product Department (`product/`)
-- **feedback-synthesizer** - Transform complaints into features
-- **sprint-prioritizer** - Ship maximum value in 6 days
-- **trend-researcher** - Identify viral opportunities
+### 設計部門 (`design/`)
+| 代理 | 說明 |
+|------|------|
+| ui-designer | 設計開發者能實際建構的介面 |
+| whimsy-injector | 為每個互動添加趣味 |
 
-### Marketing Department (`marketing/`)
-- **app-store-optimizer** - Dominate app store search results
-- **content-creator** - Generate content across all platforms
-- **growth-hacker** - Find and exploit viral growth loops
-- **instagram-curator** - Master the visual content game
-- **reddit-community-builder** - Win Reddit without being banned
-- **tiktok-strategist** - Create shareable marketing moments
-- **twitter-engager** - Ride trends to viral engagement
+### 行銷部門 (`marketing/`)
+| 代理 | 說明 |
+|------|------|
+| instagram-curator | 精通視覺內容策略 |
+| reddit-community-builder | 在 Reddit 上建立社群 |
+| tiktok-strategist | 創造可分享的行銷時刻 |
+| twitter-engager | 利用趨勢獲得病毒式互動 |
 
-### Design Department (`design/`)
-- **brand-guardian** - Keep visual identity consistent everywhere
-- **ui-designer** - Design interfaces developers can actually build
-- **ux-researcher** - Turn user insights into product improvements
-- **visual-storyteller** - Create visuals that convert and share
-- **whimsy-injector** - Add delight to every interaction
+### 專案管理 (`project-management/`)
+| 代理 | 說明 |
+|------|------|
+| experiment-tracker | 數據驅動的功能驗證 |
+| project-shipper | 發布不會崩潰的產品 |
+| studio-producer | 讓團隊專注於發布，而非開會 |
 
-### Project Management (`project-management/`)
-- **experiment-tracker** - Data-driven feature validation
-- **project-shipper** - Launch products that don't crash
-- **studio-producer** - Keep teams shipping, not meeting
+### 工作室營運 (`studio-operations/`)
+| 代理 | 說明 |
+|------|------|
+| finance-tracker | 保持工作室盈利 |
+| infrastructure-maintainer | 擴展而不增加成本 |
+| support-responder | 將不滿的使用者轉變為擁護者 |
 
-### Studio Operations (`studio-operations/`)
-- **analytics-reporter** - Turn data into actionable insights
-- **finance-tracker** - Keep the studio profitable
-- **infrastructure-maintainer** - Scale without breaking the bank
-- **legal-compliance-checker** - Stay legal while moving fast
-- **support-responder** - Turn angry users into advocates
+### 測試 (`testing/`)
+| 代理 | 說明 |
+|------|------|
+| api-tester | 確保 API 在壓力下正常運作 |
+| performance-benchmarker | 讓一切更快 |
+| test-results-analyzer | 從測試失敗中找出模式 |
 
-### Testing & Benchmarking (`testing/`)
-- **api-tester** - Ensure APIs work under pressure
-- **performance-benchmarker** - Make everything faster
-- **test-results-analyzer** - Find patterns in test failures
-- **tool-evaluator** - Choose tools that actually help
-- **workflow-optimizer** - Eliminate workflow bottlenecks
+### 特殊代理 (`bonus/`)
+| 代理 | 說明 |
+|------|------|
+| studio-coach | 召集 AI 團隊達到卓越 |
+| joker | 用科技幽默緩和氣氛 |
 
-## 🎁 Bonus Agents
-- **studio-coach** - Rally the AI troops to excellence
-- **joker** - Lighten the mood with tech humor
+## 📚 技能清單
 
-## 🎯 Proactive Agents
+| 技能 | 說明 |
+|------|------|
+| brand-guidelines | 品牌設計、視覺識別系統指南 |
+| ux-research | UX 研究方法與使用者行為分析 |
+| visual-storytelling | 視覺敘事、資訊圖表設計 |
+| trend-research | 市場趨勢分析與機會識別 |
+| feedback-analysis | 使用者回饋分析與洞察 |
+| sprint-prioritization | 衝刺規劃與優先順序排定 |
+| aso-optimization | 應用商店優化策略 |
+| content-creation | 跨平台內容創作 |
+| growth-hacking | 成長駭客策略與實驗 |
+| analytics-insights | 數據分析與效能報告 |
+| legal-compliance | 法規合規與隱私政策 |
+| tool-evaluation | 開發工具評估框架 |
+| workflow-optimization | 工作流程優化與自動化 |
 
-Some agents trigger automatically in specific contexts:
-- **studio-coach** - When complex multi-agent tasks begin or agents need guidance
-- **test-writer-fixer** - After implementing features, fixing bugs, or modifying code
-- **whimsy-injector** - After UI/UX changes
-- **experiment-tracker** - When feature flags are added
+## 🎯 主動式代理
 
-## 💡 Best Practices
+部分代理會在特定情境下自動觸發：
 
-1. **Let agents work together** - Many tasks benefit from multiple agents
-2. **Be specific** - Clear task descriptions help agents perform better
-3. **Trust the expertise** - Agents are designed for their specific domains
-4. **Iterate quickly** - Agents support the 6-day sprint philosophy
+- **studio-coach** - 複雜的多代理任務開始時或代理需要指導時
+- **test-writer-fixer** - 實作功能、修復錯誤或修改程式碼後
+- **whimsy-injector** - UI/UX 變更後
+- **experiment-tracker** - 新增功能旗標時
 
-## 🔧 Technical Details
+## 💡 最佳實踐
 
-### Agent Structure
-Each agent includes:
-- **name**: Unique identifier
-- **description**: When to use the agent with examples
-- **color**: Visual identification
-- **tools**: Specific tools the agent can access
-- **System prompt**: Detailed expertise and instructions
+1. **讓代理協同工作** - 許多任務受益於多個代理合作
+2. **具體描述** - 清晰的任務描述幫助代理表現更好
+3. **信任專業** - 代理專為其特定領域設計
+4. **快速迭代** - 代理支援 6 天衝刺理念
+5. **運用技能** - 技能提供的知識可指導決策
 
-### Adding New Agents
-1. Create a new `.md` file in the appropriate department folder
-2. Follow the existing format with YAML frontmatter
-3. Include 3-4 detailed usage examples
-4. Write comprehensive system prompt (500+ words)
-5. Test the agent with real tasks
+## 🤝 貢獻
 
-## 📊 Agent Performance
+歡迎改進現有代理或建議新代理：
 
-Track agent effectiveness through:
-- Task completion time
-- User satisfaction
-- Error rates
-- Feature adoption
-- Development velocity
+1. 使用現有格式建立新的 `.md` 檔案
+2. 包含 3-4 個詳細的使用範例
+3. 撰寫全面的系統提示（500 字以上）
+4. 以真實任務測試代理
 
-## 🚦 Status
+## 📄 授權
 
-- ✅ **Active**: Fully functional and tested
-- 🚧 **Coming Soon**: In development
-- 🧪 **Beta**: Testing with limited functionality
+本專案改編自 [Contains Studio Agents](https://github.com/contains-studio/agents)。
 
-## 🛠️ Customizing Agents for Your Studio
-
-### Agent Customization Todo List
-
-Use this checklist when creating or modifying agents for your specific needs:
-
-#### 📋 Required Components
-- [ ] **YAML Frontmatter**
-  - [ ] `name`: Unique agent identifier (kebab-case)
-  - [ ] `description`: When to use + 3-4 detailed examples with context/commentary
-  - [ ] `color`: Visual identification (e.g., blue, green, purple, indigo)
-  - [ ] `tools`: Specific tools the agent can access (Write, Read, MultiEdit, Bash, etc.)
-
-#### 📝 System Prompt Requirements (500+ words)
-- [ ] **Agent Identity**: Clear role definition and expertise area
-- [ ] **Core Responsibilities**: 5-8 specific primary duties
-- [ ] **Domain Expertise**: Technical skills and knowledge areas
-- [ ] **Studio Integration**: How agent fits into 6-day sprint workflow
-- [ ] **Best Practices**: Specific methodologies and approaches
-- [ ] **Constraints**: What the agent should/shouldn't do
-- [ ] **Success Metrics**: How to measure agent effectiveness
-
-#### 🎯 Required Examples by Agent Type
-
-**Engineering Agents** need examples for:
-- [ ] Feature implementation requests
-- [ ] Bug fixing scenarios
-- [ ] Code refactoring tasks
-- [ ] Architecture decisions
-
-**Design Agents** need examples for:
-- [ ] New UI component creation
-- [ ] Design system work
-- [ ] User experience problems
-- [ ] Visual identity tasks
-
-**Marketing Agents** need examples for:
-- [ ] Campaign creation requests
-- [ ] Platform-specific content needs
-- [ ] Growth opportunity identification
-- [ ] Brand positioning tasks
-
-**Product Agents** need examples for:
-- [ ] Feature prioritization decisions
-- [ ] User feedback analysis
-- [ ] Market research requests
-- [ ] Strategic planning needs
-
-**Operations Agents** need examples for:
-- [ ] Process optimization
-- [ ] Tool evaluation
-- [ ] Resource management
-- [ ] Performance analysis
-
-#### ✅ Testing & Validation Checklist
-- [ ] **Trigger Testing**: Agent activates correctly for intended use cases
-- [ ] **Tool Access**: Agent can use all specified tools properly
-- [ ] **Output Quality**: Responses are helpful and actionable
-- [ ] **Edge Cases**: Agent handles unexpected or complex scenarios
-- [ ] **Integration**: Works well with other agents in multi-agent workflows
-- [ ] **Performance**: Completes tasks within reasonable timeframes
-- [ ] **Documentation**: Examples accurately reflect real usage patterns
-
-#### 🔧 Agent File Structure Template
-
-```markdown
----
-name: your-agent-name
-description: Use this agent when [scenario]. This agent specializes in [expertise]. Examples:\n\n<example>\nContext: [situation]\nuser: "[user request]"\nassistant: "[response approach]"\n<commentary>\n[why this example matters]\n</commentary>\n</example>\n\n[3 more examples...]
-color: agent-color
-tools: Tool1, Tool2, Tool3
 ---
 
-You are a [role] who [primary function]. Your expertise spans [domains]. You understand that in 6-day sprints, [sprint constraint], so you [approach].
-
-Your primary responsibilities:
-1. [Responsibility 1]
-2. [Responsibility 2]
-...
-
-[Detailed system prompt content...]
-
-Your goal is to [ultimate objective]. You [key behavior traits]. Remember: [key philosophy for 6-day sprints].
-```
-
-#### 📂 Department-Specific Guidelines
-
-**Engineering** (`engineering/`): Focus on implementation speed, code quality, testing
-**Design** (`design/`): Emphasize user experience, visual consistency, rapid iteration  
-**Marketing** (`marketing/`): Target viral potential, platform expertise, growth metrics
-**Product** (`product/`): Prioritize user value, data-driven decisions, market fit
-**Operations** (`studio-operations/`): Optimize processes, reduce friction, scale systems
-**Testing** (`testing/`): Ensure quality, find bottlenecks, validate performance
-**Project Management** (`project-management/`): Coordinate teams, ship on time, manage scope
-
-#### 🎨 Customizations
-
-Modify these elements for your needs:
-- [ ] Adjust examples to reflect your product types
-- [ ] Add specific tools agents have access to
-- [ ] Modify success metrics for your KPIs
-- [ ] Update department structure if needed
-- [ ] Customize agent colors for your brand
-
-## 🤝 Contributing
-
-To improve existing agents or suggest new ones:
-1. Use the customization checklist above
-2. Test thoroughly with real projects
-3. Document performance improvements
-4. Share successful patterns with the community
+**🔗 相關連結**
+- [Claude Code 子代理文件](https://docs.anthropic.com/en/docs/claude-code/sub-agents)
+- [原始專案：Contains Studio Agents](https://github.com/contains-studio/agents)
